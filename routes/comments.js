@@ -1,13 +1,13 @@
 
 var express     = require("express"),
-    router      = express.router({mergeParams: true}),
+    router      = express.Router({mergeParams: true}),
     campground  = require("../models/campground"),
-    comment     = require("../models/comments"),
+    comment     = require("../models/comment"),
     middleware  = require("../middleware");
 
 //Comments New
 router.get("/new", middleware.isLoggedIn, function(req, res){
-//find campground by id
+    //find campground by id
     Campgroung.findById(req.params.id, function(err, campground){
         if(err){
             console.log(err);

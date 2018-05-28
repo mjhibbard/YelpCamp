@@ -1,6 +1,6 @@
 
 var express = require("express"),
-    router = express.router(),
+    router = express.Router(),
     Campground = require("../models/campground"),
     middleware = require("../middleware");
 

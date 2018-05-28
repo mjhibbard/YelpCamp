@@ -1,4 +1,3 @@
-
 var mongoose = require("mongoose");
 
 // Comment Schema Setup
