@@ -53,3 +53,14 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.listen(3000, function(){
     console.log("The YelpCamp Server has Started!");
 });
+
+
+//Start mongo instance:
+//This starts the main MongoDB database process.
+//  "C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --dbpath "C:\Users\Mike\Documents\Alpha-Code\web-dev-bootcamp\data"
+//  To connect to MongoDB through the ~bin.mongo.exe shell, open another Command Prompt. Copy and paste the following into another terminal:
+//  "C:\Program Files\MongoDB\Server\3.6\bin\mongo.exe"
+
+
+
+//(not needed) MongoDB docs path: "C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --dbpath d:\test\mongodb\data
