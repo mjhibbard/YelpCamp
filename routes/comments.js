@@ -1,8 +1,8 @@
 
 var express     = require("express"),
     router      = express.Router({mergeParams: true}),
-    campground  = require("../models/campground"),
-    comment     = require("../models/comment"),
+    Campground  = require("../models/campground"),
+    Comment     = require("../models/comment"),
     middleware  = require("../middleware");
 
 //Comments New
@@ -43,9 +43,9 @@ router.post("/", middleware.isLoggedIn, function(req, res){
                     req.flash("success", "Successfully added comment");
                     res.redirect("/campgrounds/" + campground._id);
                 }
-            })
+            });
         }
-    })
+    });
 });
 
 //Comments Edit
@@ -65,7 +65,7 @@ router.put("/:comment_id", middleware.checkCommentOwnership, function(req, res){
         if(err){
             res.redirect("back");
         } else{
-            res.redirect("/campground/" + req.params.id);
+            res.redirect("/campgrounds/" + req.params.id);
         }
     });
 });
@@ -77,7 +77,7 @@ router.delete("/:comment_id", middleware.checkCommentOwnership, function(req, re
             res.redirect("back");
         } else{
             req.flash("success", "Comment Deleted");
-            res.redirect("/campground/" + req.params.id);
+            res.redirect("/campgrounds/" + req.params.id);
         }
     });
 });
